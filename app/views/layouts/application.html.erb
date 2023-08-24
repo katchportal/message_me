@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>MessageMe</title>
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,11 +11,20 @@
   </head>
 
   <body>
+    <div class="ui small inverted menu">
+      <div class="ui container">
+        <%= render 'layouts/navigation' %>
+      </div>
+    </div>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="ui container">
+      <%= yield %>
+    </div>
     <% if user_signed_in? %>
     <%= link_to 'Sign-out', destroy_user_session_path, method: :delete %>
     <% end %>
   </body>
 </html>
+
