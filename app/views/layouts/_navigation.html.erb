@@ -8,12 +8,17 @@
   <div class="ui dropdown item">
     Account <i class="dropdown icon"></i>
       <div class="menu">
-        <a class="item">Log out</a>
         <a class="item">Log in</a>
         <a class="item">Sign up</a>
+        
+          
       </div>
   </div>
   <div class="item">
-    <div class="ui primary button">Sign Up</div>
+    <div class="ui white button">
+      <% if user_signed_in? %>
+        <%= link_to 'Sign-out', destroy_user_session_path, method: :delete %>
+      <% end %>
+    </div>
   </div>
 </div>
