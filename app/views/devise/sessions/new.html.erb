@@ -14,7 +14,7 @@
         <div class="field">
           <%= f.label :email %>
           <div class="ui left icon input">
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
             <i class="user icon"></i>
           </div>
         </div>
@@ -22,16 +22,16 @@
         <div class="field">
           <%= f.label :password %>
           <div class="ui left icon input">
-            <%= f.password_field :password, autocomplete: "current-password" %>
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
             <i class="lock icon"></i>
           </div>
           <br>
           <br>
             <% if devise_mapping.rememberable? %>
-            <div class="ui checkbox">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-            </div>
+              <div class="ui checkbox">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
           <% end %>
           <br>
           <div>
