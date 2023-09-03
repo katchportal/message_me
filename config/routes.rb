@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root 'chatroom#index'
   devise_for :users, controllers: { sessions: "sessions" }
   post 'message', to: 'messages#create'
+
+  mount ActionCable.server, at: '/cable'
 end
